@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 import Vision
 
-class ViewController: UIViewController, UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, AVCapturePhotoCaptureDelegate {
+class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate, AVCapturePhotoCaptureDelegate {
 
     var captureSession = AVCaptureSession()
     var previewView = UIImageView()
@@ -56,8 +56,8 @@ class ViewController: UIViewController, UIViewController, AVCaptureVideoDataOutp
         captureSession.beginConfiguration()
 
         let device = AVCaptureDevice.default(for: AVMediaType.video)
-        let deviceInput = try! AVCaptureVideoDataOutput()
-
+        let deviceInput = try! AVCaptureDeviceInput(device: device!)
+        
         captureSession.addInput(deviceInput)
         videoOutput = AVCaptureVideoDataOutput()
 
@@ -78,13 +78,13 @@ class ViewController: UIViewController, UIViewController, AVCaptureVideoDataOutp
 
     func detection(pixelBuffer: CVPixelBuffer) -> UIImage? {
         do {
-            let handle = VNImageRequestHandler(cvPixelBuffer: pixelBuffer)
+            let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer)
             try handler.perform([yoloRequest])
-            guard let result = yoloRequest.results as?
+            guard let results = yoloRequest.results as?
             [VNRecognizedObjectObservation] else {
                 return nil
             }
-            var detection:[Detection] = []
+            var detections:[Detection] = []
             for result in results {
                 let flippedBox = CGRect(x: result.boundingBox.minX, y: 1 - result.boundingBox.maxY, width: result.boundingBox.width, height: result.boundingBox.height)
                 let box = VNImageRectForNormalizedRect(flippedBox, Int(videoSize.width), Int(videoSize.height))
@@ -108,7 +108,7 @@ class ViewController: UIViewController, UIViewController, AVCaptureVideoDataOutp
         let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
         let cgImage = ciContex.createCGImage(ciImage, from: ciImage.extent)!
         let size = ciImage.extent.size
-        guard let cgContext = cgContext(data: nil,
+        guard let cgContext = CGContext(data: nil,
                                         width: Int(size.width),
                                         height: Int(size.height),
                                         bitsPerComponent: 8,
@@ -121,7 +121,7 @@ class ViewController: UIViewController, UIViewController, AVCaptureVideoDataOutp
             if let labelText = detection.label {
                 cgContext.textMatrix = .identity
 
-                let text = "\(labelText) : \(round(detrction.confidence*100))"
+                let text = "\(labelText) : \(round(detection.confidence*100))"
 
                 let textRect = CGRect(x: invertedBox.minX + size.width * 0.01, y: invertedBox.minY - size.width * 0.01, width: invertedBox.width, height: invertedBox.height)
                 let textStyle = NSMutableParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
@@ -132,14 +132,14 @@ class ViewController: UIViewController, UIViewController, AVCaptureVideoDataOutp
                     NSAttributedString.Key.paragraphStyle: textStyle
                 ]
 
-                CGContext.saveGState()
+                cgContext.saveGState()
                 defer {cgContext.restoreGState() }
                 let astr = NSAttributedString(string: text, attributes: textFontAttributes)
                 let setter = CTFramesetterCreateWithAttributedString(astr)
                 let path = CGPath(rect: textRect, transform: nil)
 
                 let frame = CTFramesetterCreateFrame(setter, CFRange(), path, nil)
-                cg.cgContext.textMatrix = CGAffineTransform.identity
+                cgContext.textMatrix = CGAffineTransform.identity
                 CTFrameDraw(frame, cgContext)
 
                 cgContext.setStrokeColor(detection.color.cgColor)
@@ -149,14 +149,14 @@ class ViewController: UIViewController, UIViewController, AVCaptureVideoDataOutp
         }
 
         guard let newImage = cgContext.makeImage() else { return nil }
-        return UImage(ciImage: CIImage(cgImage: newImage))
+        return UIImage(ciImage: CIImage(cgImage: newImage))
     }
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         frameCounter += 1
         if videoSize == CGSize.zero {
             guard let width = sampleBuffer.formatDescription?.dimensions.width,
-                  let height = sampleBuffer.formatDescription?.height else {
+                  let height = sampleBuffer.formatDescription?.dimensions.height else {
                 fatalError()
             }
             videoSize = CGSize(width: CGFloat(width), height: CGFloat(height)) 
