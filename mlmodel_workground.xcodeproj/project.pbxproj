@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F8350C82C1C625100CD62AC /* yolov8s.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8F8350C72C1C625100CD62AC /* yolov8s.mlmodel */; };
 		8FD402A72C1C315C00ADCFD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */; };
 		8FD402A92C1C315C00ADCFD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */; };
 		8FD402AB2C1C315C00ADCFD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402AA2C1C315C00ADCFD4 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F8350C72C1C625100CD62AC /* yolov8s.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = yolov8s.mlmodel; path = ../../../../../Downloads/yolov8s.mlmodel; sourceTree = "<group>"; };
 		8FD402A32C1C315C00ADCFD4 /* mlmodel_workground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mlmodel_workground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */,
 				8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */,
 				8FD402AA2C1C315C00ADCFD4 /* ViewController.swift */,
+				8F8350C72C1C625100CD62AC /* yolov8s.mlmodel */,
 				8FD402AC2C1C315C00ADCFD4 /* Main.storyboard */,
 				8FD402AF2C1C315E00ADCFD4 /* Assets.xcassets */,
 				8FD402B12C1C315E00ADCFD4 /* LaunchScreen.storyboard */,
@@ -261,6 +264,7 @@
 				8FD402AB2C1C315C00ADCFD4 /* ViewController.swift in Sources */,
 				8FD402A72C1C315C00ADCFD4 /* AppDelegate.swift in Sources */,
 				8FD402A92C1C315C00ADCFD4 /* SceneDelegate.swift in Sources */,
+				8F8350C82C1C625100CD62AC /* yolov8s.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
