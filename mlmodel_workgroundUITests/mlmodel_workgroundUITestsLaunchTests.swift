@@ -1,13 +1,13 @@
 //
-//  mlmodel_playgroundUITestsLaunchTests.swift
-//  mlmodel_playgroundUITests
+//  mlmodel_workgroundUITestsLaunchTests.swift
+//  mlmodel_workgroundUITests
 //
 //  Created by Nxtech on 14/06/2024.
 //
 
 import XCTest
 
-final class mlmodel_playgroundUITestsLaunchTests: XCTestCase {
+final class mlmodel_workgroundUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

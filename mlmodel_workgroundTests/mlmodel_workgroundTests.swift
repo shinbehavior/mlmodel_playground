@@ -1,14 +1,14 @@
 //
-//  mlmodel_playgroundTests.swift
-//  mlmodel_playgroundTests
+//  mlmodel_workgroundTests.swift
+//  mlmodel_workgroundTests
 //
 //  Created by Nxtech on 14/06/2024.
 //
 
 import XCTest
-@testable import mlmodel_playground
+@testable import mlmodel_workground
 
-final class mlmodel_playgroundTests: XCTestCase {
+final class mlmodel_workgroundTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
