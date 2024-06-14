@@ -17,6 +17,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     var videoOutput:AVCaptureVideoDataOutput!
     var frameCounter = 0
     var frameInterval = 1
+//    var lastFrameTime: CFTimeInterval = 0
+//    var frameRate: Double = 0
     var videoSize = CGSize.zero
     let colors:[UIColor] = {
         var colorSet:[UIColor] = []
@@ -99,8 +101,8 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             let drawImage = drawRectsOnImage(detections, pixelBuffer)
             return drawImage
         } catch let error {
-            return nil
             print(error)
+            return nil
         }
     }
 
@@ -154,6 +156,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         frameCounter += 1
+        
+//        let currentTime = CACurrentMediaTime()
+//        if lastFrameTime != 0 {
+//            let elapsedTime = currentTime - lastFrameTime
+//            frameRate = 1.0 / elapsedTime
+//            print("Current FPS: \(frameRate)")
+//        }
+//        lastFrameTime = currentTime
+        
         if videoSize == CGSize.zero {
             guard let width = sampleBuffer.formatDescription?.dimensions.width,
                   let height = sampleBuffer.formatDescription?.dimensions.height else {
