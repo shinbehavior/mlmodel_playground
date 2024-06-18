@@ -191,3 +191,4 @@ struct Detection {
     let color:UIColor
 }
 
+// ::: ERRORs ::: [IDTagDemo.AlertMessage(title: "Unspecified", message: "The operation couldn’t be completed. (IDTagDemo.HTTPError error 1.)")]
