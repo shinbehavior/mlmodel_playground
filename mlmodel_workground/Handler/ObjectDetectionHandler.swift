@@ -1,10 +1,3 @@
-//
-//  ObjectDetectionHandler.swift
-//  mlmodel_workground
-//
-//  Created by Nxtech on 19/06/2024.
-//
-
 import UIKit
 import AVFoundation
 import Vision
@@ -18,6 +11,7 @@ class ObjectDetectionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDele
     var frameCounter = 0
     var frameInterval = 1
     var videoSize = CGSize.zero
+    var selectedModel: String
     let colors: [UIColor] = {
         var colorSet: [UIColor] = []
         for _ in 0...80 {
@@ -31,9 +25,18 @@ class ObjectDetectionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDele
 
     lazy var yoloRequest: VNCoreMLRequest! = {
         do {
-            let model = try yolov8s().model
+            let model: MLModel
+            if selectedModel == "yolov8s" {
+                model = try yolov8s().model
+            } else {
+                guard let modelURL = Bundle.main.url(forResource: "ObjectDetector", withExtension: "mlmodelc") else {
+                    fatalError("Model file is missing")
+                }
+                model = try MLModel(contentsOf: modelURL)
+            }
+            
             guard let classes = model.modelDescription.classLabels as? [String] else {
-                fatalError()
+                fatalError("Unable to load classes labels")
             }
             self.classes = classes
             let vnModel = try VNCoreMLModel(for: model)
@@ -44,9 +47,10 @@ class ObjectDetectionHandler: NSObject, AVCaptureVideoDataOutputSampleBufferDele
         }
     }()
 
-    init(captureSession: AVCaptureSession, previewView: UIImageView) {
+    init(captureSession: AVCaptureSession, previewView: UIImageView, selectedModel: String) {
         self.captureSession = captureSession
         self.previewView = previewView
+        self.selectedModel = selectedModel
         super.init()
         setupVideo()
     }
@@ -179,4 +183,3 @@ struct Detection {
     let label: String?
     let color: UIColor
 }
-

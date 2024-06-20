@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct MainScreen: View {
-    @State private var path = [String]()
-
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             VStack {
-                NavigationLink("Object Detection", value: "ObjectDetection")
+                NavigationLink("Object Detection", destination: ModelSelectionView())
                     .padding()
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     .padding()
 
-                NavigationLink("Semantic Segmentation", value: "SemanticSegmentation")
+                NavigationLink("Semantic Segmentation", destination: SegmentationView())
                     .padding()
                     .background(Color.green)
                     .foregroundColor(.white)
@@ -28,16 +26,6 @@ struct MainScreen: View {
                     .padding()
             }
             .navigationTitle("Choose an Option")
-            .navigationDestination(for: String.self) { value in
-                switch value {
-                case "ObjectDetection":
-                    ObjectDetView()
-                case "SemanticSegmentation":
-                    SegmentationView()
-                default:
-                    Text("Unknown Destination")
-                }
-            }
         }
     }
 }

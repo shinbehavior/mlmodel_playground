@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		8F5ECC552C22D88400092220 /* yolov8s.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 8F5ECC542C22D88400092220 /* yolov8s.mlpackage */; };
 		8F5ECC582C22D8E400092220 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5ECC572C22D8E400092220 /* MainScreen.swift */; };
-		8F5ECC5A2C22D9DF00092220 /* ObjectDetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5ECC592C22D9DF00092220 /* ObjectDetView.swift */; };
 		8F5ECC5C2C22D9F000092220 /* SegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5ECC5B2C22D9F000092220 /* SegmentationView.swift */; };
 		8F5ECC5E2C22E80C00092220 /* ObjectDetectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5ECC5D2C22E80C00092220 /* ObjectDetectionHandler.swift */; };
+		8F7440612C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7440602C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift */; };
 		8FD402A72C1C315C00ADCFD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */; };
 		8FD402A92C1C315C00ADCFD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */; };
 		8FD402AB2C1C315C00ADCFD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402AA2C1C315C00ADCFD4 /* ViewController.swift */; };
@@ -21,6 +21,8 @@
 		8FD402BE2C1C315E00ADCFD4 /* mlmodel_workgroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402BD2C1C315E00ADCFD4 /* mlmodel_workgroundTests.swift */; };
 		8FD402C82C1C315E00ADCFD4 /* mlmodel_workgroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402C72C1C315E00ADCFD4 /* mlmodel_workgroundUITests.swift */; };
 		8FD402CA2C1C315E00ADCFD4 /* mlmodel_workgroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402C92C1C315E00ADCFD4 /* mlmodel_workgroundUITestsLaunchTests.swift */; };
+		8FF7BBBA2C23076100273434 /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7BBB92C23076100273434 /* ObjectDetector.mlmodel */; };
+		8FF7BBBC2C2308D100273434 /* ModelSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF7BBBB2C2308D100273434 /* ModelSelectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,9 +45,9 @@
 /* Begin PBXFileReference section */
 		8F5ECC542C22D88400092220 /* yolov8s.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = yolov8s.mlpackage; sourceTree = "<group>"; };
 		8F5ECC572C22D8E400092220 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
-		8F5ECC592C22D9DF00092220 /* ObjectDetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetView.swift; sourceTree = "<group>"; };
 		8F5ECC5B2C22D9F000092220 /* SegmentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentationView.swift; sourceTree = "<group>"; };
 		8F5ECC5D2C22E80C00092220 /* ObjectDetectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionHandler.swift; sourceTree = "<group>"; };
+		8F7440602C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		8FD402A32C1C315C00ADCFD4 /* mlmodel_workground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mlmodel_workground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		8FD402C32C1C315E00ADCFD4 /* mlmodel_workgroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mlmodel_workgroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD402C72C1C315E00ADCFD4 /* mlmodel_workgroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mlmodel_workgroundUITests.swift; sourceTree = "<group>"; };
 		8FD402C92C1C315E00ADCFD4 /* mlmodel_workgroundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mlmodel_workgroundUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8FF7BBB92C23076100273434 /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetector.mlmodel; path = ../../../../../Downloads/RecognizingObjectsInLiveCapture/BreakfastFinder/ObjectDetector.mlmodel; sourceTree = "<group>"; };
+		8FF7BBBB2C2308D100273434 /* ModelSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSelectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +94,34 @@
 			isa = PBXGroup;
 			children = (
 				8F5ECC572C22D8E400092220 /* MainScreen.swift */,
-				8F5ECC592C22D9DF00092220 /* ObjectDetView.swift */,
 				8F5ECC5B2C22D9F000092220 /* SegmentationView.swift */,
+				8FF7BBBB2C2308D100273434 /* ModelSelectionView.swift */,
+				8F7440602C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift */,
 			);
 			path = ScreensView;
+			sourceTree = "<group>";
+		};
+		8F5ECC5F2C22EAA200092220 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				8F5ECC612C22EFC500092220 /* SegmentationManager */,
+				8F5ECC5D2C22E80C00092220 /* ObjectDetectionHandler.swift */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		8F5ECC602C22EB2600092220 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		8F5ECC612C22EFC500092220 /* SegmentationManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SegmentationManager;
 			sourceTree = "<group>";
 		};
 		8FD4029A2C1C315C00ADCFD4 = {
@@ -119,12 +147,14 @@
 		8FD402A52C1C315C00ADCFD4 /* mlmodel_workground */ = {
 			isa = PBXGroup;
 			children = (
+				8F5ECC602C22EB2600092220 /* Common */,
+				8F5ECC562C22D8BB00092220 /* ScreensView */,
+				8F5ECC5F2C22EAA200092220 /* Handler */,
 				8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */,
 				8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */,
-				8F5ECC562C22D8BB00092220 /* ScreensView */,
 				8FD402AA2C1C315C00ADCFD4 /* ViewController.swift */,
-				8F5ECC5D2C22E80C00092220 /* ObjectDetectionHandler.swift */,
 				8F5ECC542C22D88400092220 /* yolov8s.mlpackage */,
+				8FF7BBB92C23076100273434 /* ObjectDetector.mlmodel */,
 				8FD402AC2C1C315C00ADCFD4 /* Main.storyboard */,
 				8FD402AF2C1C315E00ADCFD4 /* Assets.xcassets */,
 				8FD402B12C1C315E00ADCFD4 /* LaunchScreen.storyboard */,
@@ -281,9 +311,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FF7BBBA2C23076100273434 /* ObjectDetector.mlmodel in Sources */,
 				8F5ECC552C22D88400092220 /* yolov8s.mlpackage in Sources */,
-				8F5ECC5A2C22D9DF00092220 /* ObjectDetView.swift in Sources */,
+				8FF7BBBC2C2308D100273434 /* ModelSelectionView.swift in Sources */,
 				8FD402AB2C1C315C00ADCFD4 /* ViewController.swift in Sources */,
+				8F7440612C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift in Sources */,
 				8F5ECC5E2C22E80C00092220 /* ObjectDetectionHandler.swift in Sources */,
 				8F5ECC582C22D8E400092220 /* MainScreen.swift in Sources */,
 				8FD402A72C1C315C00ADCFD4 /* AppDelegate.swift in Sources */,

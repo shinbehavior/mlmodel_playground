@@ -13,10 +13,11 @@ class ViewController: UIViewController {
     var captureSession = AVCaptureSession()
     var previewView = UIImageView()
     var objectDetectionHandler: ObjectDetectionHandler!
+    var selectedModel: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(previewView)
-        objectDetectionHandler = ObjectDetectionHandler(captureSession: captureSession, previewView: previewView)
+        objectDetectionHandler = ObjectDetectionHandler(captureSession: captureSession, previewView: previewView, selectedModel: selectedModel)
     }
 }
