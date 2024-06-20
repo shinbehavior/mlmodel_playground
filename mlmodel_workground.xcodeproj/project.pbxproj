@@ -12,6 +12,10 @@
 		8F5ECC5C2C22D9F000092220 /* SegmentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5ECC5B2C22D9F000092220 /* SegmentationView.swift */; };
 		8F5ECC5E2C22E80C00092220 /* ObjectDetectionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5ECC5D2C22E80C00092220 /* ObjectDetectionHandler.swift */; };
 		8F7440612C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7440602C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift */; };
+		8F7440632C2413FD00A9D446 /* FeatureExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7440622C2413FD00A9D446 /* FeatureExtractor.swift */; };
+		8F7440672C244DDC00A9D446 /* YOLOv8sFeatureExtractor.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 8F7440662C244DDC00A9D446 /* YOLOv8sFeatureExtractor.mlpackage */; };
+		8F7440692C24541500A9D446 /* FeatureExtractorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7440682C24541500A9D446 /* FeatureExtractorView.swift */; };
+		8F74406B2C245B4400A9D446 /* features.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8F74406A2C245B4400A9D446 /* features.txt */; };
 		8FD402A72C1C315C00ADCFD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */; };
 		8FD402A92C1C315C00ADCFD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */; };
 		8FD402AB2C1C315C00ADCFD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD402AA2C1C315C00ADCFD4 /* ViewController.swift */; };
@@ -48,6 +52,10 @@
 		8F5ECC5B2C22D9F000092220 /* SegmentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentationView.swift; sourceTree = "<group>"; };
 		8F5ECC5D2C22E80C00092220 /* ObjectDetectionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionHandler.swift; sourceTree = "<group>"; };
 		8F7440602C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDetectionViewControllerRepresentable.swift; sourceTree = "<group>"; };
+		8F7440622C2413FD00A9D446 /* FeatureExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureExtractor.swift; sourceTree = "<group>"; };
+		8F7440662C244DDC00A9D446 /* YOLOv8sFeatureExtractor.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = YOLOv8sFeatureExtractor.mlpackage; sourceTree = "<group>"; };
+		8F7440682C24541500A9D446 /* FeatureExtractorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureExtractorView.swift; sourceTree = "<group>"; };
+		8F74406A2C245B4400A9D446 /* features.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = features.txt; sourceTree = "<group>"; };
 		8FD402A32C1C315C00ADCFD4 /* mlmodel_workground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mlmodel_workground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +105,7 @@
 				8F5ECC5B2C22D9F000092220 /* SegmentationView.swift */,
 				8FF7BBBB2C2308D100273434 /* ModelSelectionView.swift */,
 				8F7440602C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift */,
+				8F7440682C24541500A9D446 /* FeatureExtractorView.swift */,
 			);
 			path = ScreensView;
 			sourceTree = "<group>";
@@ -113,6 +122,7 @@
 		8F5ECC602C22EB2600092220 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8F7440622C2413FD00A9D446 /* FeatureExtractor.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -153,6 +163,8 @@
 				8FD402A62C1C315C00ADCFD4 /* AppDelegate.swift */,
 				8FD402A82C1C315C00ADCFD4 /* SceneDelegate.swift */,
 				8FD402AA2C1C315C00ADCFD4 /* ViewController.swift */,
+				8F74406A2C245B4400A9D446 /* features.txt */,
+				8F7440662C244DDC00A9D446 /* YOLOv8sFeatureExtractor.mlpackage */,
 				8F5ECC542C22D88400092220 /* yolov8s.mlpackage */,
 				8FF7BBB92C23076100273434 /* ObjectDetector.mlmodel */,
 				8FD402AC2C1C315C00ADCFD4 /* Main.storyboard */,
@@ -285,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FD402B32C1C315E00ADCFD4 /* LaunchScreen.storyboard in Resources */,
+				8F74406B2C245B4400A9D446 /* features.txt in Resources */,
 				8FD402B02C1C315E00ADCFD4 /* Assets.xcassets in Resources */,
 				8FD402AE2C1C315C00ADCFD4 /* Main.storyboard in Resources */,
 			);
@@ -313,12 +326,15 @@
 			files = (
 				8FF7BBBA2C23076100273434 /* ObjectDetector.mlmodel in Sources */,
 				8F5ECC552C22D88400092220 /* yolov8s.mlpackage in Sources */,
+				8F7440632C2413FD00A9D446 /* FeatureExtractor.swift in Sources */,
 				8FF7BBBC2C2308D100273434 /* ModelSelectionView.swift in Sources */,
+				8F7440672C244DDC00A9D446 /* YOLOv8sFeatureExtractor.mlpackage in Sources */,
 				8FD402AB2C1C315C00ADCFD4 /* ViewController.swift in Sources */,
 				8F7440612C24084300A9D446 /* ObjectDetectionViewControllerRepresentable.swift in Sources */,
 				8F5ECC5E2C22E80C00092220 /* ObjectDetectionHandler.swift in Sources */,
 				8F5ECC582C22D8E400092220 /* MainScreen.swift in Sources */,
 				8FD402A72C1C315C00ADCFD4 /* AppDelegate.swift in Sources */,
+				8F7440692C24541500A9D446 /* FeatureExtractorView.swift in Sources */,
 				8FD402A92C1C315C00ADCFD4 /* SceneDelegate.swift in Sources */,
 				8F5ECC5C2C22D9F000092220 /* SegmentationView.swift in Sources */,
 			);

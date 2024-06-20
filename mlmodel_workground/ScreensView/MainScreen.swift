@@ -17,6 +17,13 @@ struct MainScreen: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
                     .padding()
+                
+                NavigationLink("Feature Extractor", destination: FeatureExtractorView())
+                    .padding()
+                    .background(Color.red)
+                    .foregroundColor(.white)
+                    .cornerRadius(20)
+                    .padding()
 
                 NavigationLink("Semantic Segmentation", destination: SegmentationView())
                     .padding()
